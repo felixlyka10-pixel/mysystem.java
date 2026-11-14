@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class TricycleFare {
+    public static void main(String[] args) {
+        String[] brgy = {"Buenavista/Calaocan/Centro", "Abra", "Ambalatungan", "Balintocatoc", "Baluarte",
+            "Bannawag Norte", "Batal", "Cabulay", "Divisoria", "Luna", "Mabini", "Nabbuan", "Naggasican",
+            "Patul", "Rizal", "Sagana", "Salvador via Rizal", "Salvador via Batal", "San Andres",
+            "San Isidro", "San Jose", "Sinili", "Sinsayon", "Santa Rosa", "Villa Gonzaga"};
+        int[] fare = {15, 19, 17, 23, 17, 26, 22, 24, 25, 30, 16, 18, 27, 16, 19, 21, 27, 29, 17, 25, 32, 25, 16, 35, 21};
+
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < brgy.length; i++) {
+            System.out.println((i + 1) + ". " + brgy[i] + " - P" + fare[i]);
+        }
+
+        System.out.print("Choose barangay (1-25): ");
+        int c = sc.nextInt() - 1;
+        System.out.print("Number of students: ");
+        int n = sc.nextInt();
+
+        System.out.println("Barangay: " + brgy[c]);
+        System.out.println("Fare per student: P" + fare[c]);
+        System.out.println("Total fare: P" + (fare[c] * n));
+    }
+}
